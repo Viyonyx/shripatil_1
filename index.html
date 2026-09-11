@@ -91,21 +91,87 @@
       width: min(1200px, calc(100% - 40px));
       margin: 0 auto;
       padding: 28px 0 40px;
+      position: relative;
     }
 
-    .certificate-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    .certificate-carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .certificate-track {
+      display: flex;
       gap: 18px;
+      transition: transform 0.45s ease;
+      will-change: transform;
+      touch-action: pan-y;
     }
 
-    .certificate-grid img {
+    .certificate-slide {
+      flex: 0 0 calc((100% - 54px) / 4);
+      min-width: 0;
+    }
+
+    .certificate-slide img {
       width: 100%;
       height: auto;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       display: block;
       border-radius: 10px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(16, 35, 63, 0.9);
+      color: #fff;
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 18px rgba(16, 35, 63, 0.18);
+    }
+
+    .carousel-btn:hover { background: #173f7a; }
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .carousel-dot {
+      width: 9px;
+      height: 9px;
+      border: 0;
+      padding: 0;
+      border-radius: 50%;
+      background: #cbd3df;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active { background: #173f7a; }
+
+    @media (max-width: 900px) {
+      .certificate-slide { flex-basis: calc((100% - 18px) / 2); }
+    }
+
+    @media (max-width: 600px) {
+      .certificate-wrap { width: calc(100% - 28px); padding: 20px 0 30px; }
+      .certificate-slide { flex-basis: 100%; }
+      .carousel-btn { width: 40px; height: 40px; font-size: 23px; }
     }
 
 
@@ -1041,16 +1107,21 @@
     </div>
 
     <div class="certificate-wrap">
-      <div class="certificate-grid">
-        <img src="images/1.png" alt="Certificate 1" />
-        <img src="images/2.png" alt="Certificate 2" />
-        <img src="images/3.png" alt="Certificate 3" />
-        <img src="images/4.png" alt="Certificate 4" />
-        <img src="images/5.png" alt="Certificate 5" />
-        <img src="images/6.png" alt="Certificate 6" />
-        <img src="images/7.png" alt="Certificate 7" />
-        <img src="images/8.png" alt="Certificate 8" />
+      <div class="certificate-carousel" id="certificateCarousel">
+        <div class="certificate-track">
+          <div class="certificate-slide"><img src="images/1.png" alt="Certificate 1" /></div>
+          <div class="certificate-slide"><img src="images/2.png" alt="Certificate 2" /></div>
+          <div class="certificate-slide"><img src="images/3.png" alt="Certificate 3" /></div>
+          <div class="certificate-slide"><img src="images/4.png" alt="Certificate 4" /></div>
+          <div class="certificate-slide"><img src="images/5.png" alt="Certificate 5" /></div>
+          <div class="certificate-slide"><img src="images/6.png" alt="Certificate 6" /></div>
+          <div class="certificate-slide"><img src="images/7.png" alt="Certificate 7" /></div>
+          <div class="certificate-slide"><img src="images/8.png" alt="Certificate 8" /></div>
+        </div>
+        <button class="carousel-btn carousel-prev" type="button" aria-label="Previous certificates">&#8249;</button>
+        <button class="carousel-btn carousel-next" type="button" aria-label="Next certificates">&#8250;</button>
       </div>
+      <div class="carousel-dots" aria-label="Certificate carousel navigation"></div>
     </div>
   </div>
 
@@ -1282,7 +1353,7 @@
           </p>
 
           <a
-            href="https://t.me/fxblueshots"
+            href="https://t.me/YOUR_TELEGRAM"
             target="_blank"
             rel="noopener noreferrer"
             class="social-btn"
@@ -1311,7 +1382,7 @@
           </p>
 
           <a
-            href="https://x.com/theshriofficial?s=11&t=tQpjZgEG6E7c1YYstzbwxQ"
+            href="https://www.x.com"
             target="_blank"
             rel="noopener noreferrer"
             class="social-btn"
@@ -1563,6 +1634,62 @@
 
   </footer>
 
+
+  <script>
+    (() => {
+      const carousel = document.getElementById('certificateCarousel');
+      if (!carousel) return;
+      const track = carousel.querySelector('.certificate-track');
+      const slides = [...carousel.querySelectorAll('.certificate-slide')];
+      const prev = carousel.querySelector('.carousel-prev');
+      const next = carousel.querySelector('.carousel-next');
+      const dotsWrap = carousel.parentElement.querySelector('.carousel-dots');
+      let index = 0, startX = 0, currentX = 0;
+
+      const visibleCount = () => window.innerWidth <= 600 ? 1 : (window.innerWidth <= 900 ? 2 : 4);
+      const maxIndex = () => Math.max(0, slides.length - visibleCount());
+
+      function renderDots() {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i <= maxIndex(); i++) {
+          const dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (i === index ? ' active' : '');
+          dot.type = 'button';
+          dot.setAttribute('aria-label', `Show certificate group ${i + 1}`);
+          dot.addEventListener('click', () => { index = i; update(); });
+          dotsWrap.appendChild(dot);
+        }
+      }
+
+      function update() {
+        index = Math.min(Math.max(index, 0), maxIndex());
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        track.style.transform = `translateX(-${index * (slideWidth + gap)}px)`;
+        [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === index));
+        prev.style.opacity = index === 0 ? '.45' : '1';
+        next.style.opacity = index === maxIndex() ? '.45' : '1';
+      }
+
+      prev.addEventListener('click', () => { if (index > 0) { index--; update(); } });
+      next.addEventListener('click', () => { if (index < maxIndex()) { index++; update(); } });
+
+      carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; currentX = startX; }, {passive:true});
+      carousel.addEventListener('touchmove', e => { currentX = e.touches[0].clientX; }, {passive:true});
+      carousel.addEventListener('touchend', () => {
+        const delta = currentX - startX;
+        if (Math.abs(delta) > 45) {
+          if (delta < 0 && index < maxIndex()) index++;
+          if (delta > 0 && index > 0) index--;
+          update();
+        }
+      });
+
+      window.addEventListener('resize', () => { index = Math.min(index, maxIndex()); renderDots(); update(); });
+      renderDots();
+      update();
+    })();
+  </script>
 
 </body>
 
