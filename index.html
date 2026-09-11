@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+  />
+
+  <title>Unlock Your Free Course</title>
+
+
+  <style>
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+      max-width: 100%;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+
+      font-family: Arial, Helvetica, sans-serif;
+
+      background: #f7f9fc;
+      color: #172033;
+
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+
+
+
+    /* =========================================
+       BANNER + CERTIFICATES
+    ========================================= */
+    .top-media {
+      width: 100%;
+      background: #ffffff;
+      padding: 0;
+    }
+
+    .banner-wrap {
+      width: 100%;
+      line-height: 0;
+      overflow: hidden;
+    }
+
+    .banner-wrap img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1920 / 900;
+      object-fit: cover;
+      display: block;
+    }
+
+    .certificate-wrap {
+      width: min(1200px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 40px;
+    }
+
+    .certificate-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .certificate-grid img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at top,
+          #edf5ff 0%,
+          #ffffff 55%
+        );
+
+      /* Reduced bottom padding */
+      padding: 70px 20px 35px;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 820px;
+
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+
+      padding: 8px 18px;
+
+      border-radius: 30px;
+
+      background: #e8f0ff;
+      color: #2157a7;
+
+      font-size: clamp(12px, 1.5vw, 14px);
+      font-weight: 700;
+
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+
+      line-height: 1.05;
+
+      letter-spacing: -1.5px;
+
+      color: #10233f;
+
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      display: block;
+
+      color: #2a5caa;
+    }
+
+    .hero p {
+      width: 100%;
+      max-width: 680px;
+
+      margin: 0 auto;
+
+      color: #647086;
+
+      font-size: clamp(16px, 2vw, 18px);
+
+      line-height: 1.7;
+    }
+
+
+
+    /* =========================================
+       GENERAL SECTIONS
+    ========================================= */
+
+    section {
+      width: 100%;
+
+      padding: 55px 0;
+    }
+
+    /* Reduce gap below Hero */
+    #steps {
+      padding-top: 25px;
+    }
+
+    .section-title {
+      width: 100%;
+      max-width: 700px;
+
+      text-align: center;
+
+      margin:
+        0 auto
+        clamp(30px, 5vw, 50px);
+    }
+
+    .section-title h2 {
+      color: #132a4a;
+
+      font-size: clamp(28px, 4vw, 36px);
+
+      line-height: 1.2;
+
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #6c788d;
+
+      font-size: clamp(14px, 1.8vw, 16px);
+
+      line-height: 1.6;
+    }
+
+
+
+    /* =========================================
+       HOW IT WORKS
+    ========================================= */
+
+    .steps-grid {
+      width: 100%;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 24px;
+    }
+
+    .step-card {
+      width: 100%;
+      min-width: 0;
+      height: 100%;
+
+      background: #ffffff;
+
+      padding: clamp(24px, 3vw, 32px);
+
+      border-radius: 18px;
+
+      border: 1px solid #e5e9f0;
+
+      box-shadow:
+        0 10px 35px
+        rgba(19, 42, 74, 0.05);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      background: #153d78;
+      color: #ffffff;
+
+      font-weight: 700;
+
+      margin-bottom: 20px;
+    }
+
+    .step-card h3 {
+      color: #173052;
+
+      font-size: clamp(18px, 2vw, 20px);
+
+      line-height: 1.3;
+
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      color: #6d788c;
+
+      font-size: 15px;
+
+      line-height: 1.7;
+    }
+
+
+
+    /* =========================================
+       SOCIAL SECTION
+    ========================================= */
+
+    .social-section {
+      background: #ffffff;
+    }
+
+    .social-grid {
+      width: 100%;
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 20px;
+    }
+
+    .social-card {
+      width: 100%;
+      min-width: 0;
+      height: 100%;
+
+      background: #f8faff;
+
+      border: 1px solid #e3e8f1;
+
+      border-radius: 16px;
+
+      padding: clamp(22px, 3vw, 30px);
+
+      text-align: center;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .social-card:hover {
+      transform: translateY(-5px);
+
+      border-color: #b7c9e8;
+
+      box-shadow:
+        0 12px 30px
+        rgba(23, 63, 122, 0.08);
+    }
+
+    .social-icon {
+      font-size: 34px;
+
+      line-height: 1;
+
+      margin-bottom: 15px;
+    }
+
+    .social-card h3 {
+      color: #173052;
+
+      font-size: clamp(18px, 2vw, 20px);
+
+      line-height: 1.3;
+
+      margin-bottom: 8px;
+    }
+
+    .social-card p {
+      color: #6c788d;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      margin-bottom: 18px;
+    }
+
+    .social-btn {
+      display: inline-block;
+
+      padding: 11px 20px;
+
+      background: #173f7a;
+      color: #ffffff;
+
+      border-radius: 8px;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .social-btn:hover {
+      background: #102f5e;
+
+      transform: translateY(-2px);
+    }
+
+
+
+    /* =========================================
+       WHAT YOU'LL GET
+    ========================================= */
+
+    .benefits-grid {
+      width: 100%;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 20px;
+    }
+
+    .benefit {
+      width: 100%;
+      min-width: 0;
+      height: 100%;
+
+      background: #ffffff;
+
+      padding: clamp(24px, 3vw, 28px);
+
+      border-radius: 16px;
+
+      border: 1px solid #e5e9f0;
+    }
+
+    .benefit h3 {
+      color: #173052;
+
+      font-size: clamp(18px, 2vw, 20px);
+
+      line-height: 1.3;
+
+      margin-bottom: 10px;
+    }
+
+    .benefit p {
+      color: #6d788c;
+
+      font-size: 15px;
+
+      line-height: 1.7;
+    }
+
+
+
+    /* =========================================
+       CLAIM COURSE
+    ========================================= */
+
+    .claim-section {
+      width: 100%;
+
+      padding: 60px 20px;
+    }
+
+    .claim-box {
+      width: 100%;
+      max-width: 950px;
+
+      margin: 0 auto;
+
+      background:
+        linear-gradient(
+          135deg,
+          #102d56,
+          #235696
+        );
+
+      color: #ffffff;
+
+      border-radius: 24px;
+
+      text-align: center;
+
+      padding:
+        clamp(40px, 6vw, 60px)
+        clamp(20px, 5vw, 40px);
+
+      box-shadow:
+        0 20px 50px
+        rgba(16, 45, 86, 0.22);
+    }
+
+    .claim-box h2 {
+      font-size: clamp(28px, 4vw, 38px);
+
+      line-height: 1.2;
+
+      margin-bottom: 14px;
+    }
+
+    .claim-box p {
+      width: 100%;
+      max-width: 620px;
+
+      margin: 0 auto 28px;
+
+      color: #d9e5f5;
+
+      font-size: clamp(14px, 2vw, 16px);
+
+      line-height: 1.7;
+    }
+
+    .claim-btn {
+      display: inline-block;
+
+      background: #ffffff;
+      color: #173f7a;
+
+      padding: 16px 30px;
+
+      border-radius: 10px;
+
+      font-weight: 800;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .claim-btn:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.12);
+    }
+
+
+
+    /* =========================================
+       FAQ
+    ========================================= */
+
+    .faq {
+      width: 100%;
+      max-width: 760px;
+
+      margin: 0 auto;
+    }
+
+    details {
+      width: 100%;
+
+      background: #ffffff;
+
+      border: 1px solid #e1e7ef;
+
+      border-radius: 12px;
+
+      margin-bottom: 14px;
+
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+
+      color: #173052;
+
+      font-size: clamp(15px, 2vw, 16px);
+
+      font-weight: 700;
+    }
+
+    details p {
+      margin-top: 12px;
+
+      color: #6c788d;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      width: 100%;
+
+      text-align: center;
+
+      padding: 35px 20px;
+
+      color: #7a8495;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      border-top: 1px solid #e5e9f0;
+
+      background: #ffffff;
+    }
+
+    footer p + p {
+      margin-top: 5px;
+    }
+
+
+
+    /* =========================================
+       TABLET
+       901px AND BELOW
+    ========================================= */
+
+    @media screen and (max-width: 900px) {
+
+      .certificate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .container {
+        width: min(100% - 36px, 760px);
+      }
+
+
+      /* HOW IT WORKS */
+
+      .steps-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .steps-grid .step-card:last-child {
+        grid-column: 1 / -1;
+      }
+
+
+      /* SOCIALS */
+
+      .social-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+
+      /* BENEFITS */
+
+      .benefits-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .benefits-grid .benefit:last-child {
+        grid-column: 1 / -1;
+      }
+
+    }
+
+
+
+    /* =========================================
+       GOOGLE SITES MOBILE FIX
+       600px AND BELOW
+    ========================================= */
+
+    @media screen and (max-width: 600px) {
+
+      .certificate-wrap {
+        width: 100%;
+        padding: 12px;
+      }
+
+      .certificate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .certificate-grid img {
+        border-radius: 6px;
+      }
+
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        overflow-x: hidden;
+      }
+
+
+      /* CONTAINER */
+
+      .container {
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: 16px;
+        padding-right: 16px;
+
+        margin: 0 auto;
+      }
+
+
+      /* HERO */
+
+      .hero {
+        width: 100%;
+
+        min-height: auto;
+
+        padding:
+          45px
+          16px
+          25px;
+      }
+
+      .hero-content {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .badge {
+        padding: 7px 14px;
+
+        margin-bottom: 18px;
+
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        width: 100%;
+
+        font-size: clamp(32px, 10vw, 42px);
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 18px;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+
+      .hero h1 span {
+        display: block;
+      }
+
+      .hero p {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+
+        padding: 0;
+      }
+
+
+      /* SECTIONS */
+
+      section {
+        width: 100%;
+
+        padding: 45px 0;
+      }
+
+      #steps {
+        padding-top: 20px;
+      }
+
+      .section-title {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 0 5px;
+
+        margin-bottom: 28px;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+
+        line-height: 1.2;
+      }
+
+      .section-title p {
+        font-size: 14px;
+
+        line-height: 1.6;
+      }
+
+
+      /* ALL GRIDS */
+
+      .steps-grid,
+      .social-grid,
+      .benefits-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+      }
+
+      .steps-grid .step-card:last-child,
+      .benefits-grid .benefit:last-child {
+        grid-column: auto;
+      }
+
+
+      /* CARDS */
+
+      .step-card,
+      .social-card,
+      .benefit {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        padding: 20px;
+      }
+
+      .step-number {
+        width: 42px;
+        height: 42px;
+
+        margin-bottom: 16px;
+      }
+
+      .step-card h3,
+      .social-card h3,
+      .benefit h3 {
+        font-size: 18px;
+      }
+
+      .step-card p,
+      .benefit p {
+        font-size: 14px;
+      }
+
+
+      /* SOCIAL */
+
+      .social-icon {
+        font-size: 30px;
+      }
+
+      .social-btn {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 18px;
+
+        text-align: center;
+      }
+
+
+      /* CLAIM */
+
+      .claim-section {
+        width: 100%;
+
+        padding:
+          45px
+          16px;
+      }
+
+      .claim-box {
+        width: 100%;
+        max-width: 100%;
+
+        padding:
+          35px
+          20px;
+
+        border-radius: 18px;
+      }
+
+      .claim-box h2 {
+        font-size: 28px;
+      }
+
+      .claim-box p {
+        font-size: 14px;
+      }
+
+      .claim-btn {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 18px;
+
+        text-align: center;
+      }
+
+
+      /* FAQ */
+
+      .faq {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      details {
+        width: 100%;
+
+        padding: 16px;
+      }
+
+      summary {
+        font-size: 15px;
+      }
+
+
+      /* FOOTER */
+
+      footer {
+        width: 100%;
+
+        padding:
+          30px
+          18px;
+
+        font-size: 12px;
+      }
+
+    }
+
+
+
+    /* =========================================
+       VERY SMALL PHONES
+       380px AND BELOW
+    ========================================= */
+
+    @media screen and (max-width: 380px) {
+
+      .container {
+        width: 100%;
+
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .hero {
+        padding:
+          40px
+          14px
+          20px;
+      }
+
+      .badge {
+        font-size: 11px;
+
+        padding: 6px 12px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+
+        line-height: 1.08;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      #steps {
+        padding-top: 15px;
+      }
+
+      .section-title h2 {
+        font-size: 25px;
+      }
+
+      .step-card,
+      .social-card,
+      .benefit {
+        padding: 18px;
+      }
+
+      .claim-section {
+        padding:
+          40px
+          12px;
+      }
+
+      .claim-box {
+        padding:
+          30px
+          16px;
+      }
+
+      .claim-box h2 {
+        font-size: 25px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- =========================================
+       BANNER + CERTIFICATES
+  ========================================== -->
+  <div class="top-media">
+    <div class="banner-wrap">
+      <img src="images/banner_image.jpg" alt="Shri Patil banner" />
+    </div>
+
+    <div class="certificate-wrap">
+      <div class="certificate-grid">
+        <img src="images/1.png" alt="Certificate 1" />
+        <img src="images/2.png" alt="Certificate 2" />
+        <img src="images/3.png" alt="Certificate 3" />
+        <img src="images/4.png" alt="Certificate 4" />
+        <img src="images/5.png" alt="Certificate 5" />
+        <img src="images/6.png" alt="Certificate 6" />
+        <img src="images/7.png" alt="Certificate 7" />
+        <img src="images/8.png" alt="Certificate 8" />
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        🎓 FREE COURSE ACCESS
+      </div>
+
+      <h1>
+        Follow. Subscribe.
+        <span>Unlock Your Course.</span>
+      </h1>
+
+      <p>
+        Complete the simple social media steps below,
+        submit your details, and receive access to our
+        exclusive course once your submission is verified.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       HOW IT WORKS
+  ========================================== -->
+
+  <section id="steps">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          How It Works
+        </h2>
+
+        <p>
+          Complete these three simple steps to claim your free course.
+        </p>
+
+      </div>
+
+
+      <div class="steps-grid">
+
+
+        <!-- STEP 1 -->
+
+        <div class="step-card">
+
+          <div class="step-number">
+            1
+          </div>
+
+          <h3>
+            Follow Our Socials
+          </h3>
+
+          <p>
+            Follow our Instagram,
+            subscribe to our YouTube channel,
+            and join our Telegram community.
+          </p>
+
+        </div>
+
+
+
+        <!-- STEP 2 -->
+
+        <div class="step-card">
+
+          <div class="step-number">
+            2
+          </div>
+
+          <h3>
+            Submit Your Details
+          </h3>
+
+          <p>
+            Enter your name, email address
+            and social media usernames
+            using our short Google Form.
+          </p>
+
+        </div>
+
+
+
+        <!-- STEP 3 -->
+
+        <div class="step-card">
+
+          <div class="step-number">
+            3
+          </div>
+
+          <h3>
+            Receive Course Access
+          </h3>
+
+          <p>
+            After verification, we'll send your
+            course access link on the Telegram channel.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       SOCIAL ACTIONS
+  ========================================== -->
+
+  <section class="social-section">
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <h2>
+          Complete These Actions
+        </h2>
+
+        <p>
+          Please complete all required actions
+          before submitting the form.
+        </p>
+
+      </div>
+
+
+      <div class="social-grid">
+
+
+        <!-- INSTAGRAM -->
+
+        <div class="social-card">
+
+          <div class="social-icon">
+            📸
+          </div>
+
+          <h3>
+            Follow on Instagram
+          </h3>
+
+          <p>
+            Follow our official Instagram page.
+          </p>
+
+          <a
+            href="https://www.instagram.com/theshriofficial?igsi=MTI5am1tYzA0NTUwbw%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-btn"
+          >
+            Follow Instagram
+          </a>
+
+        </div>
+
+
+
+        <!-- YOUTUBE -->
+
+        <div class="social-card">
+
+          <div class="social-icon">
+            ▶️
+          </div>
+
+          <h3>
+            Subscribe on YouTube
+          </h3>
+
+          <p>
+            Subscribe to our YouTube channel.
+          </p>
+
+          <a
+            href="https://www.youtube.com/@theshriofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-btn"
+          >
+            Subscribe YouTube
+          </a>
+
+        </div>
+
+
+
+        <!-- TELEGRAM -->
+
+        <div class="social-card">
+
+          <div class="social-icon">
+            ✈️
+          </div>
+
+          <h3>
+            Join Telegram
+          </h3>
+
+          <p>
+            Join our Telegram community for updates.
+          </p>
+
+          <a
+            href="https://t.me/YOUR_TELEGRAM"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-btn"
+          >
+            Join Telegram
+          </a>
+
+        </div>
+
+
+
+        <!-- X / TWITTER -->
+
+        <div class="social-card">
+
+          <div class="social-icon">
+            𝕏
+          </div>
+
+          <h3>
+            Follow on X
+          </h3>
+
+          <p>
+            Follow our official X page for updates.
+          </p>
+
+          <a
+            href="https://x.com/theshriofficial?s=11&t=tQpjZgEG6E7c1YYstzbwxQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-btn"
+          >
+            Follow on X
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       WHAT YOU'LL GET
+  ========================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <h2>
+          What You'll Get
+        </h2>
+
+        <p>
+          Your free course can include live sessions,
+          resources, templates and practical strategies.
+        </p>
+
+      </div>
+
+
+      <div class="benefits-grid">
+
+
+        <!-- LIVE SESSIONS -->
+
+        <div class="benefit">
+
+          <h3>
+            🎥 Live Sessions
+          </h3>
+
+          <p>
+            Easy-to-follow structured live sessions.
+          </p>
+
+        </div>
+
+
+
+        <!-- RESOURCES -->
+
+        <div class="benefit">
+
+          <h3>
+            📚 Resources
+          </h3>
+
+          <p>
+            Downloadable PDFs, guides,
+            templates and supporting materials.
+          </p>
+
+        </div>
+
+
+
+        <!-- PRACTICAL LEARNING -->
+
+        <div class="benefit">
+
+          <h3>
+            🚀 Practical Learning
+          </h3>
+
+          <p>
+            Actionable knowledge you can
+            immediately put into practice.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       CLAIM COURSE
+  ========================================== -->
+
+  <section class="claim-section">
+
+    <div class="claim-box">
+
+      <h2>
+        Completed All the Steps?
+      </h2>
+
+      <p>
+        Submit your details through the form below.
+        Once your submission has been verified,
+        we'll send the course access link
+        on the Telegram channel.
+      </p>
+
+      <a
+        href="https://forms.gle/qvrxuJa3pCuYVGoH8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="claim-btn"
+      >
+        Claim My Free Course →
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       FAQ
+  ========================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <h2>
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+
+      <div class="faq">
+
+
+        <!-- FAQ 1 -->
+
+        <details>
+
+          <summary>
+            Is the course really free?
+          </summary>
+
+          <p>
+            Yes. Complete the required campaign
+            actions and submit your information
+            for verification.
+          </p>
+
+        </details>
+
+
+
+        <!-- FAQ 2 -->
+
+        <details>
+
+          <summary>
+            How will I receive the course?
+          </summary>
+
+          <p>
+            Once your submission is approved,
+            the course access link will be shared
+            through the Telegram channel.
+          </p>
+
+        </details>
+
+
+
+        <!-- FAQ 3 -->
+
+        <details>
+
+          <summary>
+            How long does verification take?
+          </summary>
+
+          <p>
+            Verification time depends on
+            the number of submissions.
+          </p>
+
+        </details>
+
+
+
+        <!-- FAQ 4 -->
+
+        <details>
+
+          <summary>
+            Do I need to complete every social action?
+          </summary>
+
+          <p>
+            Yes. Complete every listed social action
+            before submitting the form.
+          </p>
+
+        </details>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Shri Patil. All rights reserved.
+    </p>
+
+    <p>
+      By submitting your details,
+      you agree to receive communications
+      related to this course campaign.
+    </p>
+
+  </footer>
+
+
+</body>
+
+</html>
